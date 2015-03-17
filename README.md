@@ -1,7 +1,7 @@
 #Cordova Low Latency Audio Plugin for iOS and Android
 =======================
 
-Prerequisites: A Cordova/PhoneGap 3.0+ project for iOS, Android or BlackBerry 10.
+Prerequisites: A Cordova/PhoneGap 3.0+ project for iOS or Android.
 
 ## Index
 
@@ -115,7 +115,7 @@ Unloads an audio file from memory.
  * ID - string unique ID for the audio file
  * success - success callback function
  * fail - error/fail callback function
-
+	
 ##Example
 
 In this example, the resources reside in a relative path under the Cordova root folder "www/".
@@ -134,27 +134,27 @@ The implementation goes as follows:
 ```javascript
 if( window.plugins && window.plugins.LowLatencyAudio ) {
 	var lla = window.plugins.LowLatencyAudio;
-
+	
 	// preload audio resource
 	lla.preloadAudio( 'music', media['music'], 1, 1, function(msg){
 	}, function(msg){
 		console.log( 'error: ' + msg );
 	});
-
+	
 	lla.preloadFX( 'click', media['click'], function(msg){
 	}, function(msg){
 		console.log( 'error: ' + msg );
 	});
-
+	
 	// now start playing
 	lla.play( 'click' );
 	lla.loop( 'music' );
 
-	// stop after 1 min
+	// stop after 1 min	
 	window.setTimeout( function(){
 		//lla.stop( 'click' );
 		lla.stop( 'music' );
-
+			
 		lla.unload( 'music' );
 		lla.unload( 'click' );
 	}, 1000 * 60 );
@@ -177,3 +177,4 @@ cordova plugin add https://github.com/floatinghotpot/cordova-plugin-lowlatencyau
 
 The first iteration of the Plugin was built by [Andrew Trice](https://github.com/triceam/LowLatencyAudio).
 This plugin was ported to Plugman / Cordova 3 by [Raymond Xie](https://github.com/floatinghotpot), [SidneyS](https://github.com/sidneys) and other committers.
+
