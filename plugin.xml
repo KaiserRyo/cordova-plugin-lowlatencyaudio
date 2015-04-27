@@ -34,27 +34,38 @@
         <source-file src="src/android/LowLatencyAudioAsset.java" target-dir="src/com/rjfun/cordova/plugin" />
         <source-file src="src/android/PolyphonicVoice.java" target-dir="src/com/rjfun/cordova/plugin" />
         
-     </platform>
+    </platform>
      
-     <!-- ios -->
-     <platform name="ios">
-         
-         <config-file target="config.xml" parent="/*">
-             <feature name="LowLatencyAudio">
-                 <param name="ios-package" value="LowLatencyAudio" />
-             </feature>
-         </config-file>
-         
-         <framework src="Foundation.framework" />
-         <framework src="AVFoundation.framework" />
-         <framework src="AudioToolbox.framework" /> 
-         
-         <header-file src="src/ios/LowLatencyAudio.h" />
-         <source-file src="src/ios/LowLatencyAudio.m" />
-         
-         <header-file src="src/ios/LowLatencyAudioAsset.h" />
-         <source-file src="src/ios/LowLatencyAudioAsset.m" />
+    <!-- ios -->
+    <platform name="ios">
+        
+        <config-file target="config.xml" parent="/*">
+            <feature name="LowLatencyAudio">
+                <param name="ios-package" value="LowLatencyAudio" />
+            </feature>
+        </config-file>
+        
+        <framework src="Foundation.framework" />
+        <framework src="AVFoundation.framework" />
+        <framework src="AudioToolbox.framework" /> 
+        
+        <header-file src="src/ios/LowLatencyAudio.h" />
+        <source-file src="src/ios/LowLatencyAudio.m" />
+        
+        <header-file src="src/ios/LowLatencyAudioAsset.h" />
+        <source-file src="src/ios/LowLatencyAudioAsset.m" />
        
-	</platform>
-          
+     </platform>
+
+     <!-- blackberry 10 -->
+     <platform name="blackberry10">
+        <source-file src="src/blackberry10/index.js" target-dir="LowLatencyAudio" />
+        <lib-file src="src/blackberry10/native/device/libLowLatencyAudio.so" arch="device"/>
+        <lib-file src="src/blackberry10/native/simulator/libLowLatencyAudio.so" arch="simulator"/>
+        <config-file target="www/config.xml" parent="/widget">
+            <feature name="LowLatencyAudio">
+                <param name="blackberry-package" value="LowLatencyAudio" />
+            </feature>
+        </config-file>
+     </platform>
 </plugin>
