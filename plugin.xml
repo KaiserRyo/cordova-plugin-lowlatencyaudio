@@ -56,5 +56,15 @@
          <source-file src="src/ios/LowLatencyAudioAsset.m" />
        
 	</platform>
-          
+
+    <platform name="blackberry10">
+        <source-file src="src/blackberry10/index.js" />
+        <lib-file src="src/blackberry10/native/device/libLowLatencyAudio.so" arch="device"/>
+        <lib-file src="src/blackberry10/native/simulator/libLowLatencyAudio.so" arch="simulator"/>
+        <config-file target="www/config.xml" parent="/widget">
+            <feature name="LowLatencyAudio">
+                <param name="blackberry-package" value="LowLatencyAudio" />
+            </feature>
+        </config-file>
+    </platform>
 </plugin>
