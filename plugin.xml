@@ -57,8 +57,9 @@
        
 	</platform>
 
+	<!-- blackberry 10 -->
     <platform name="blackberry10">
-        <source-file src="src/blackberry10/index.js" />
+        <source-file src="src/blackberry10/index.js" target-dir="LowLatencyAudio" />
         <lib-file src="src/blackberry10/native/device/libLowLatencyAudio.so" arch="device"/>
         <lib-file src="src/blackberry10/native/simulator/libLowLatencyAudio.so" arch="simulator"/>
         <config-file target="www/config.xml" parent="/widget">
